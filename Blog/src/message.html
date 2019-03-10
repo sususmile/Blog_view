@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>留言板</title>
+    <link rel="stylesheet" href="../frame/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../frame/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../emoji/css/jquery.mCustomScrollbar.min.css"/>
+    <link rel="stylesheet" href="../emoji/css/jquery.emoji.css"/>
+    <link rel="stylesheet" href="../css/topNav.css">
+    <link rel="stylesheet" href="../css/message.css">
+    <script src="../emoji/js/jquery.js"></script>
+    <script src="../emoji/lib/script/jquery.mousewheel-3.0.6.min.js"></script>
+    <script src="../emoji/lib/script/jquery.mCustomScrollbar.min.js"></script>
+    <script src="../emoji/js/jquery.emoji.js"></script>
+    <script type="text/javascript" src="../frame/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/message.js"></script>
+</head>
+<body>
+<form action="">
+    <div class="head" style="z-index: -1"></div>
+    <nav class="navbar navbar-fixed-top navbar-default navStyle">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="../index.html" class="navbar-brand brandStyle">Ms.sdd</a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#col">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="col">
+                <ul class="nav navbar-nav">
+                    <li class="first"><a href="../index.html">首页</a></li>
+                    <li><a href="blog.html"> 博客</a></li>
+                    <li><a href="message.html"> 留言</a></li>
+                    <li><a href="diary.html"> 日记</a></li>
+                    <li><a href="aboutM.html"> 关于</a></li>
+                    <span id="log-in"><a href="#" data-toggle="modal" data-target="#mymodal"><span class="fa fa-qq"></span></a></span>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div style="clear: both;width:100%;height: 70px"></div>
+    <div class="container">
+        <div class="messageEdit">
+            <div id="editTitle">
+                <h2>留言板</h2>
+                <p>沟通交流,拉近你我！</p>
+            </div>
+            <div id="editArea">
+                <div class="input" id="saytext" contenteditable="true"></div>
+                <p id="emothionLine"><span id="divd">|</span><span id="insetLink"><a href="#">链接</a></span></p>
+            </div>
+            <input type="submit" name="submit" value="提交留言" class="subBtn">
+        </div>
+        <div class="messageShow">
+                <ul>
+                    <li>
+                        <div class="comment">
+                            <img src="../img/blogbg.jpg" alt="" class="img-responsive">
+                            <div class="comment_name">朵朵小仙女</div>
+                            <div class="comment_content">vvvvvvvvvvvvvvjhjdf火热突破让他平均</div>
+                            <div class="comment_time">2019/2/19 20:05:30</div>
+                        </div>
+                    </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="modal" id="mymodal" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="modal-title">登录页面</span>
+                    <button class="close" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>用户名:</label>
+                        <input type="text" class="form-control"  required="required"/>
+                    </div>
+                    <div class="form-group">
+                        <label>密码:</label>
+                        <input type="password" class="form-control"  required />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="../regist.html" style="float: left;text-decoration: underline!important;">注册</a>
+                    <input type="submit" class="btn btn-success"/>
+                    <input type="reset" class="btn btn-warning"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+</body>
+<script>
+    $("#saytext").emoji({
+        // button: "#emotion",
+        showTab: false,
+        animation: 'slide',
+        icons:[
+            {
+                name:"QQ表情",
+                path:"../emoji/img/qq/",
+                maxNum:91,
+                excludeNums: [41, 45, 54],
+                file:".gif"
+            }]
+    });
+</script>
+</html>

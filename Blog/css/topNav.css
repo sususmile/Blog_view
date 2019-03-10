@@ -1,0 +1,58 @@
+@font-face {
+    font-family: barbarahand;
+    src:url("../fonts/barbarahand-webfont.woff2");
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+a{
+    text-decoration: none!important;
+}
+body{
+    margin: 0px;
+    padding: 0px;
+
+}
+.head{
+    background: url("../img/blogbg.jpg");
+    position: fixed;
+    background-size: 100% 100%;
+    width: 100%;
+    height: 100%;
+}
+nav{
+    position: relative;
+}
+
+#col li{
+    font-size: 20px;
+    padding-top: 2%;
+    margin-right:40px;
+    padding-bottom: 1%;
+}
+#col ul{
+    position: absolute;
+    left:40% ;
+}
+.brandStyle{
+    font-size: 50px;
+    padding-top: 20%;
+    font-family: barbarahand;
+}
+.navStyle{
+    background-color: white;
+    height: 70px;
+    line-height: 80px;
+}
+#log-in{
+    position: relative;
+    left: 26%;
+}
+#log-in span{
+    font-size: 28px;
+    color: #000;
+}
+.tec,#col li:hover{
+    border-bottom: 2px solid #5cb85c;
+}
