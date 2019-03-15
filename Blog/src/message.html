@@ -16,9 +16,10 @@
     <script src="../emoji/js/jquery.emoji.js"></script>
     <script type="text/javascript" src="../frame/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../js/message.js"></script>
+    <script type="text/javascript" src="../js/holdLogin.js"></script>
 </head>
 <body>
-<form action="">
+<form action="" method="post" onsubmit="return subTest()">
     <div class="head" style="z-index: -1"></div>
     <nav class="navbar navbar-fixed-top navbar-default navStyle">
         <div class="container">
@@ -37,38 +38,27 @@
                     <li><a href="message.html"> 留言</a></li>
                     <li><a href="diary.html"> 日记</a></li>
                     <li><a href="aboutM.html"> 关于</a></li>
-                    <span id="log-in"><a href="#" data-toggle="modal" data-target="#mymodal"><span class="fa fa-qq"></span></a></span>
+                    <span id="log-in"><a href="#" data-toggle="modal" data-target="#mymodal" id="unLogin"><span class="fa fa-qq"></span></a><span id="user_status"></span><a href="" id='exit'></a></span>
                 </ul>
             </div>
         </div>
     </nav>
     <div style="clear: both;width:100%;height: 70px"></div>
-    <div class="container">
+    <div class="container" id="comment_area">
         <div class="messageEdit">
             <div id="editTitle">
                 <h2>留言板</h2>
                 <p>沟通交流,拉近你我！</p>
             </div>
             <div id="editArea">
-                <div class="input" id="saytext" contenteditable="true"></div>
+                <div class="input" id="saytext" contenteditable="true" name="textInput"></div>
                 <p id="emothionLine"><span id="divd">|</span><span id="insetLink"><a href="#">链接</a></span></p>
             </div>
             <input type="submit" name="submit" value="提交留言" class="subBtn">
         </div>
-        <div class="messageShow">
-                <ul>
-                    <li>
-                        <div class="comment">
-                            <img src="../img/blogbg.jpg" alt="" class="img-responsive">
-                            <div class="comment_name">朵朵小仙女</div>
-                            <div class="comment_content">vvvvvvvvvvvvvvjhjdf火热突破让他平均</div>
-                            <div class="comment_time">2019/2/19 20:05:30</div>
-                        </div>
-                    </li>
-            </ul>
-        </div>
     </div>
-
+</form>
+    <form action="http://localhost:8081/Blog/MasterLogin.do" method="post">
     <div class="modal" id="mymodal" data-backdrop="static">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -81,11 +71,11 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label>用户名:</label>
-                        <input type="text" class="form-control"  required="required"/>
+                        <input type="text" class="form-control" name="user" required="required"/>
                     </div>
                     <div class="form-group">
                         <label>密码:</label>
-                        <input type="password" class="form-control"  required />
+                        <input type="password" class="form-control"  name="pwd" required />
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -96,7 +86,7 @@
             </div>
         </div>
     </div>
-</form>
+    </form>
 </body>
 <script>
     $("#saytext").emoji({

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>通知页面</title>
+    <style>
+        h1{
+            text-align: center;
+            color: #5cb85c;
+            margin-left: 20px;
+        }
+        div{
+            text-align: center;
+        }
+        #time{
+            color: red;
+            padding-right: 10px;
+        }
+    </style>
+</head>
+<body onload="clock()">
+<h1> 注册成功！</h1>
+<div><span id="time">5</span><span>秒后返回主界面</span></div>
+<div>点击下面的链接直接返回</div>
+<div><a href="../../index.html">返回主界面</a></div>
+</body>
+<script>
+    var time =parseInt(document.getElementById("time").innerText);
+    function clock() {
+        document.getElementById("time").innerHTML=time;
+        if(time>0){
+            time-=1;
+        }
+        if(time===0){
+            location.href="../../index.html";
+        }
+        setTimeout("clock()",1000);
+    }
+</script>
+</html>

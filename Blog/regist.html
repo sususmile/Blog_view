@@ -16,7 +16,7 @@
     <div>博客注册</div>
 </header>
 <section>
-    <form class="form-horizontal" method="post" action="../Blog/MasterAdd.do" onsubmit="return verif()">
+    <form class="form-horizontal" method="post" action="http://localhost:8081/Blog/MasterAdd.do" onsubmit="return verif()">
         <div class="content">
             <div class="login_square">
                 <div class="logo_head">
@@ -27,7 +27,7 @@
                         <label class="control-label col-md-2"><span class="regist_star">*</span>用户名</label>
                         <div class="col-md-10"><input type="text" class="form-control" id="user" name="user_account" onblur="verfEmail(this)" required><span id="insertTest"></span></div>
                         <div class="tips">
-                            <span>6~18个字符，可使用字母、数字、下划线，需以字母开头</span>
+                            <span>6-8字符，可使用字母、数字、下划线，需以字母开头</span>
                         </div>
                     </div>
 
